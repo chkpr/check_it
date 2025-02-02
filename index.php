@@ -1,5 +1,5 @@
 
-<?php require_once __DIR__. "/templates/header.php" ?>
+<?php require_once __DIR__. "/templates/header.php";?>
 
 <div class="container col-xxl-8 px-5 py-5 mt-5 container_bg">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
