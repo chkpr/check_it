@@ -1,3 +1,8 @@
+<?php 
+  require_once __DIR__. "/../lib/session.php";
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container pb-3">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5 border-bottom border-white">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -21,12 +26,16 @@
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="nav-link px-2 link-secondary">Accueil</a></li>
         <li><a href="#" class="nav-link px-2">Nouvelle liste</a></li>
-        <li><a href="#" class="nav-link px-2">Mes listes</a></li>
+        <li><a href="mes-listes.php" class="nav-link px-2">Mes listes</a></li>
         <li><a href="about.php" class="nav-link px-2">À propos</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
+      <?php if (isset($_SESSION['user'])) { ?>
+        <a href="logout.php" class="btn btn-outline-primary me-2">Déconnexion</a>
+      <?php } else { ?>
         <a href="login.php" class="btn btn-outline-primary me-2">Connexion</a>
+        <?php } ?>
         <button type="button" class="btn btn-primary">S'inscrire</button>
       </div>
     </header>
