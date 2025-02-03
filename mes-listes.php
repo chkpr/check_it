@@ -13,9 +13,9 @@
 
 ?>
 
-<div class="container pb-5 mb-5">
+<div class="container pb-5 mb-5 px-5">
     <h1 class="py-5 my-5">Mes listes</h1>
-    <div class="row pb-5 mb-5">
+    <div class="row py-5 my-5 container_bg">
 
 
     <?php if (isset($_SESSION['user'])) { 
@@ -44,13 +44,14 @@
         <?php } ?>
         
     <?php } else { ?>
-    <div>
-        <p>Pour consulter vos listes, vous devez vous connecter.</p>
+    <div class="px-3 mx-3 pt-3 pb-5">
+        <h3 class="pb-5">Pour consulter vos listes, vous devez vous connecter.</h3>
         <a href="login.php" class="btn btn-outline-primary me-2">Connexion</a>
         <?php } ?>
     </div>
 </div>
 
+<div class="pb-5"></div>
 
    
 <?php require_once __DIR__. "/templates/footer.php"; ?>
