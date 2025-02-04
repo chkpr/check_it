@@ -8,7 +8,7 @@ function getListsByUserId(PDO $pdo, int $userId):array
                             WHERE user_id = :user_id");
     $query->bindValue(':user_id', $userId, PDO::PARAM_INT);
     $query->execute();
-    //fetch() nous permet de récupérer une seule ligne
+    //fetchAll() nous permet de récupérer toutes les listes
     $lists = $query->fetchAll(PDO::FETCH_ASSOC);
 
     return $lists;
