@@ -14,7 +14,10 @@
 ?>
 
 <div class="container pb-5 mb-5 px-5">
-    <h1 class="py-5 my-5">Mes listes</h1>
+    <div class="d-flex justify-content-between align-items-center py-5 mt-5">
+        <h1 class="">Mes listes</h1>
+        <a href="ajout-modification-liste.php" class="btn btn-primary">Ajouter une liste</a>
+    </div>
     <div class="row py-5 my-5 container_bg">
 
 
