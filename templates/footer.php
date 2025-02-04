@@ -8,8 +8,8 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="index.php" class="nav-link px-2 text-body-secondary">Accueil</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nouvelle liste</a></li>
       <li class="nav-item"><a href="mes-listes.php" class="nav-link px-2 text-body-secondary">Mes listes</a></li>
+      <li class="nav-item"><a href="ajout-modification-liste.php" class="nav-link px-2 text-body-secondary">Nouvelle liste</a></li>
       <li class="nav-item"><a href="about.php" class="nav-link px-2 text-body-secondary">À propos</a></li>
     </ul>
   </footer>

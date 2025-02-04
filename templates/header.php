@@ -25,8 +25,8 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="nav-link px-2 link-secondary">Accueil</a></li>
-        <li><a href="#" class="nav-link px-2">Nouvelle liste</a></li>
         <li><a href="mes-listes.php" class="nav-link px-2">Mes listes</a></li>
+        <li><a href="ajout-modification-liste.php" class="nav-link px-2">Nouvelle liste</a></li>
         <li><a href="about.php" class="nav-link px-2">À propos</a></li>
       </ul>
 
