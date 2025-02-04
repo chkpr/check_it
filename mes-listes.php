@@ -3,8 +3,8 @@
 <?php
     
     require_once __DIR__. "/templates/header.php";
-    require_once __DIR__. "/lib/pdo.php";
-    require_once __DIR__. "/lib/lists.php";
+    require_once  "lib/pdo.php";
+    require_once  "lib/lists.php";
     
 
     if(isset($_SESSION['user'])) {
@@ -16,12 +16,14 @@
 <div class="container pb-5 mb-5 px-5">
     <div class="d-flex justify-content-between align-items-center py-5 mt-5">
         <h1 class="">Mes listes</h1>
-        <a href="ajout-modification-liste.php" class="btn btn-primary">Ajouter une liste</a>
+        <?php if (isUserConnected()) { ?>
+            <a href="ajout-modification-liste.php" class="btn btn-primary">Ajouter une liste</a>
+        <?php } ?>
     </div>
     <div class="row py-5 my-5 container_bg">
 
 
-    <?php if (isset($_SESSION['user'])) { 
+    <?php if (isUserConnected()) { 
         if ($lists) {
             foreach ($lists as $list) { ?>
                     <div class="col-md-4 my-2 py-5">
