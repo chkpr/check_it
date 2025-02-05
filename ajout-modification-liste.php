@@ -150,23 +150,10 @@ if(isset($_GET['id'])) {
                     <div id="collapse-item-<?=$item['id']?>" class="accordion-collapse collapse" data-bs-parent="#accordion-parent-<?=$item['id']?>">
                         <div class="accordion-body">
                             <form action="" method="post">
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Titre</label>
-                                    <input type="text" value="<?=$list['title'];?>" name="title" id="title" class="form-control">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="category_id" class="form-label">Catégorie</label>
-                                    <select name="category_id" id="category_id" class="form-control">
-                                    <?php foreach ($categories as $category) { ?>
-                                        <option 
-                                            <?=($category['id'] === $list['category_id']) ? 'selected="selected"' : '' ?>
-                                            value="<?=$category['id']?>"><?=$category['name']?>
-                                        </option>
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="submit" value="Enregistrer" name="saveList" class="btn btn-primary">
+                                <div class="mb-3 d-flex">
+                                    <input type="text" value="<?=$item['name'];?>" name="name" class="form-control">
+                                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                                    <input type="submit" value="Enregistrer" name="saveListItem" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>
