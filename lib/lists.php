@@ -73,3 +73,12 @@ function saveListItem(PDO $pdo, string $name, int $listId, bool $status = false,
     
 }
 
+function getListItems(PDO $pdo, int $id):array
+{
+    $query = $pdo->prepare('SELECT * FROM item WHERE list_id = :id');
+    $query->bindValue(':id', $id, PDO::PARAM_INT);
+    $query->execute();
+
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+

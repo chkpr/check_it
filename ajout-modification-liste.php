@@ -63,6 +63,8 @@ $editMode=false;
 if(isset($_GET['id'])) {
     $list = getListById($pdo, (int)$_GET['id']);
     $editMode=true;
+
+    $items = getListItems($pdo, (int)$_GET['id']);
 }
 
 ?>
@@ -135,6 +137,41 @@ if(isset($_GET['id'])) {
             <input type="text" name="name" id="name" placeholder="Ajouter un item" class="form-control mx-2">
             <input type="submit" name="saveItem" class="btn btn-primary" value="Enregistrer">
         </form>
+        <?php foreach($items as $item) { ?>
+                <div class="accordion">
+    <div class="accordion-item" id="accordion-parent-<?=$item['id']?>">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-item-<?=$item['id']?>" aria-expanded="false" aria-controls="collapseOne">
+            <?=($editMode) ? $list['title'] : 'Ajouter une liste' ?>
+        </button>
+    </h2>
+    <div id="collapse-item-<?=$item['id']?>" class="accordion-collapse collapse" data-bs-parent="#accordion-parent-<?=$item['id']?>">
+        <div class="accordion-body">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titre</label>
+                    <input type="text" value="<?=$list['title'];?>" name="title" id="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="category_id" class="form-label">Catégorie</label>
+                    <select name="category_id" id="category_id" class="form-control">
+                        <?php foreach ($categories as $category) { ?>
+                            <option 
+                            <?=($category['id'] === $list['category_id']) ? 'selected="selected"' : '' ?>
+                            value="<?=$category['id']?>"><?=$category['name']?></option>
+                        <?php } ?>
+                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Enregistrer" name="saveList" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+        <?php } ?>
     <?php } ?>
 </div>
 
