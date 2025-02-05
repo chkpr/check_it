@@ -82,3 +82,10 @@ function getListItems(PDO $pdo, int $id):array
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function deleteListItemById(PDO $pdo, int $id):bool
+{
+    $query = $pdo->prepare('DELETE FROM item WHERE id = :id');
+    $query->bindValue(':id', $id, PDO::PARAM_INT);
+    
+    return $query->execute();
+}

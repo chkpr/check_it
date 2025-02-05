@@ -61,6 +61,13 @@
         }
     }
 
+if (isset($_GET['action']) && isset($_GET['item_id'])) {
+    if ($_GET['action'] === 'deleteListItem') {
+        $res = deleteListItemById($pdo, (int)$_GET['item_id']);
+        header('Location: ajout-modification-liste.php?id=' . $_GET['id']);
+    }
+}
+
 $editMode=false;
 if(isset($_GET['id'])) {
     $list = getListById($pdo, (int)$_GET['id']);
@@ -116,6 +123,7 @@ if(isset($_GET['id'])) {
                     <input type="submit" value="Enregistrer" name="saveList" class="btn btn-primary">
                 </div>
             </form>
+            
         </div>
     </div>
 </div>
@@ -146,7 +154,8 @@ if(isset($_GET['id'])) {
                 <div class="accordion-item" id="accordion-parent-<?=$item['id']?>">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-item-<?=$item['id']?>" aria-expanded="false" aria-controls="collapseOne">
-                            <?= $item['name'] ?>
+                            
+                        <?= $item['name'] ?>
                         </button>
                     </h2>
                     <div id="collapse-item-<?=$item['id']?>" class="accordion-collapse collapse" data-bs-parent="#accordion-parent-<?=$item['id']?>">
@@ -158,6 +167,7 @@ if(isset($_GET['id'])) {
                                     <input type="submit" value="Enregistrer" name="saveListItem" class="btn btn-primary">
                                 </div>
                             </form>
+                            <a class="btn btn-outline-primary" href="?id=<?=$_GET['id']?>&action=deleteListItem&item_id=<?=$item['id']?>"onclick="return confirm('Etes-vous sûr de vouloir supprimer cet item ?')"><i class="bi bi-trash3-fill"></i> Supprimer</a>
                         </div>
                     </div>
                 </div>
