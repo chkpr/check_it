@@ -49,10 +49,12 @@
         }
     }
 
-    if (isset($_POST['saveItem'])) {
+    if (isset($_POST['saveListItem'])) {
         if (!empty($_POST['name'])) {
             //sauvegarder
-            $res = saveListItem($pdo, $_POST['name'], (int)$_GET['id'], false);
+            $item_id = (isset($_POST['item_id']) ? $_POST['item_id'] : null);
+            $res = saveListItem($pdo, $_POST['name'], (int)$_GET['id'], false, $item_id);
+            
         } else {
             //erreur
             $errorsListItem[] = "Le nom de l'item est obligatoire.";
@@ -135,7 +137,7 @@ if(isset($_GET['id'])) {
         <form action="" method="post" class="d-flex">
             <input type="checkbox" name="status" id="status">
             <input type="text" name="name" id="name" placeholder="Ajouter un item" class="form-control mx-2">
-            <input type="submit" name="saveItem" class="btn btn-primary" value="Enregistrer">
+            <input type="submit" name="saveListItem" class="btn btn-primary" value="Enregistrer">
         </form>
         <div class="row m-4 border rounded p-3">
         <?php foreach($items as $item) { ?>
@@ -152,7 +154,7 @@ if(isset($_GET['id'])) {
                             <form action="" method="post">
                                 <div class="mb-3 d-flex">
                                     <input type="text" value="<?=$item['name'];?>" name="name" class="form-control">
-                                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                                    <input type="hidden" name="item_id" value="<?= $item['id']; ?>">
                                     <input type="submit" value="Enregistrer" name="saveListItem" class="btn btn-primary">
                                 </div>
                             </form>
