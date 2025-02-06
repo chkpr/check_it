@@ -32,7 +32,7 @@
                                 <i class="bi bi-card-checklist"></i>
                                 <h3 class="card-title"><?=$list['title']?></h3>
                             </div>
-                            <div class="card-body d-flex justify-content-between align-items-end">
+                            <div class="card-body d-flex flex-column">
                                 <?php $items = getListItems($pdo, $list['id']); ?>
                                 <?php if ($items) { ?>
                                 <ul class="list-group">
@@ -41,9 +41,9 @@
                                         
                                         <?php } ?>
                                 </ul>
-                                <?php } ?>                             
-                                <a href="ajout-modification-liste.php?id=<?=$list['id']?>" class="btn btn-primary">Voir la liste</a>
-                                <div>
+                                <?php } ?>
+                                <div class="d-flex justify-content-between align-items-end mt-2">                           
+                                <a href="ajout-modification-liste.php?id=<?=$list['id']?>" class="btn btn-primary">Voir la liste</a>                           
                                     <span class="badge rounded-pill text-bg-primary">
                                         <i class="bi <?=$list['category_icon']?>"></i>
                                     <?=$list['category_name']?>
