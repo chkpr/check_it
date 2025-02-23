@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="assets/css/override-bootstrap.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body>
-    <div class="container pb-3">
+<body class="min-vh-100">
+    <div class="container pb-5 mb-5">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5 border-bottom border-white">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">

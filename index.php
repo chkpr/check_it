@@ -1,11 +1,11 @@
-<div class="min-vh-100">
+<div class="">
 <?php 
   
   require_once __DIR__. "/templates/header.php";
   
 ?>
 
-<div class="container col-xxl-8 px-5 py-5 mt-5 container_bg">
+<div class="container col-xxl-8 px-5 py-5 my-5 container_bg">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="./assets/images/hero_img.jpg" class="d-block mx-lg-auto img-fluid rounded-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy">

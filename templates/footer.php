@@ -1,4 +1,4 @@
-  <div class="container">
+  <div class="container pt-5 mt-5">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-white">
     <p class="col-md-4 mb-0 text-body-secondary">© 2025 Check It</p>
 
