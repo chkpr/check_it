@@ -15,8 +15,8 @@
         <p class="lead">Bienvenue sur CheckIt, votre nouvelle plateforme de création de listes de tâches en ligne. 
             Avec CheckIt, vous pouvez facilement créer des listes de choses à faire pour tous les aspects de votre vie.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Créer une liste</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">À propos</button>
+          <a href="login.php" class="btn btn-primary btn-lg px-4 me-md-2">Créer une liste</a>
+          <a href="about.php" class="btn btn-outline-secondary btn-lg px-4">À propos</a>
         </div>
       </div>
     </div>

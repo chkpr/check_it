@@ -36,7 +36,7 @@
                 <?php } else { ?>
                     <a href="login.php" class="btn btn-outline-primary me-2">Se connecter</a>
                 <?php } ?>
-        <button type="button" class="btn btn-primary">S'inscrire</button>
+        
       </div>
     </header>
   </div>

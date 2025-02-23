@@ -20,7 +20,7 @@
             </div>
   <div class="card-body">
     <h3 class="card-title">Créez vos listes en nombre illimité</h3>
-      <a href="#" class="btn btn-primary">S'inscrire</a>
+      <a href="login.php" class="btn btn-primary">Se connecter</a>
   </div>
 </div>
     </div>
@@ -31,7 +31,7 @@
             </div>
   <div class="card-body">
     <h3 class="card-title">Classez vos listes par catégorie</h3>
-       <a href="#" class="btn btn-primary">S'inscrire</a>
+       <a href="login.php" class="btn btn-primary">Se connecter</a>
   </div>
 </div>
     </div>
@@ -42,7 +42,7 @@
             </div>
   <div class="card-body">
     <h3 class="card-title">Retrouvez vos listes facilement</h3>
-       <a href="#" class="btn btn-primary">S'inscrire</a>
+       <a href="login.php" class="btn btn-primary">Se connecter</a>
   </div>
 </div>
     </div>
