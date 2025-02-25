@@ -1,7 +1,12 @@
 :root {
 <<<<<<< HEAD
+<<<<<<< HEAD
     --primary: #ee9ca7;
     --secondary: #bebcbd;
+=======
+    --primary: #94898f;
+    --secondary: #564e51;
+>>>>>>> dev
 =======
     --primary: #94898f;
     --secondary: #564e51;
@@ -16,7 +21,11 @@
     --bs-link-color: var(--primary);
     --bs-link-hover-color: var(--secondary);
 <<<<<<< HEAD
+<<<<<<< HEAD
     --bs-primary-rgb: 102, 198, 186;
+=======
+    --bs-primary-rgb: 148, 137, 143;
+>>>>>>> dev
 =======
     --bs-primary-rgb: 148, 137, 143;
 >>>>>>> dev
