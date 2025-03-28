@@ -39,36 +39,36 @@
                     header('Location: ajout-modification-liste.php?id=' . $res);
                 }                
             } else {
-                //erreur
+                // Erreur
                 $errorsList[] = "La liste n'a pas été enregistrée";
 
             }
         } else {
-            // erreur
+            // Erreur
             $errorsList[] = "Le titre est obligatoire";
         }
     }
 
     if (isset($_POST['saveListItem'])) {
         if (!empty($_POST['name'])) {
-            //sauvegarder
+            // Sauvegarder
             $item_id = (isset($_POST['item_id']) ? $_POST['item_id'] : null);
             $res = saveListItem($pdo, $_POST['name'], (int)$_GET['id'], false, $item_id);
             
         } else {
-            //erreur
+            // Erreur
             $errorsListItem[] = "Le nom de l'item est obligatoire.";
         }
     }
 
-    //effacer une liste
+    // Effacer une liste
     if (isset($_GET['action']) && isset($_GET['item_id'])) {
         if ($_GET['action'] === 'deleteListItem') {
             $res = deleteListItemById($pdo, (int)$_GET['item_id']);
             header('Location: ajout-modification-liste.php?id=' . $_GET['id']);
         }
 
-    //Modifier le statut ('to do' / 'done')
+    // Modifier le statut d'un item ('to do' / 'done')
     if ($_GET['action'] === 'updateStatusListItem') {
         $res = updateListItemStatus($pdo, (int)$_GET['item_id'], (bool)$_GET['status']);
             if (isset($_GET['redirect']) && $_GET['redirect'] === 'list') {
@@ -79,7 +79,7 @@
         }
     }
 
-    //récupérer les listes
+    // Récupérer les listes
     $editMode=false;
     if(isset($_GET['id'])) {
         $list = getListById($pdo, (int)$_GET['id']);

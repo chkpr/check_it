@@ -125,3 +125,11 @@ form i {
     --bs-accordion-active-color: var(--bs-light-text-emphasis);
     --bs-accordion-active-bg: var(--bs-light-bg);
 }
+
+.bi-check-circle {
+    color: #94898f;
+}
+
+.bi-check-circle-fill {
+    color:#94898f;
+}

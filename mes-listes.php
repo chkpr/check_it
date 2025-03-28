@@ -55,7 +55,7 @@
                                 <?php if ($items) { ?>
                                 <ul class="list-group">
                                     <?php foreach ($items as $item) { ?>
-                                        <li class="list-group-item"><a class="me-2" href="ajout-modification-liste.php?id=<?=$list['id']?>&action=updateStatusListItem&redirect=list&item_id=<?=$item['id'] ?>&status=<?=!$item['status'] ?>"><i class="bi bi-check-circle<?=($item['status'] ? '-fill' : '')?>"></i></a><?= $item['name'] ?></li>
+                                        <li class="list-group-item"><a class="me-2" href="ajout-modification-liste.php?id=<?=$list['id']?>&action=updateStatusListItem&redirect=list&item_id=<?=$item['id'] ?>&status=<?=!$item['status'] ?>"><i class="bi bi-check-circle<?=($item['status'] ? '-fill' : '')?>"></i></a> <?= $item['name'] ?></li>
                                         
                                         <?php } ?>
                                 </ul>
@@ -85,6 +85,5 @@
 
 <div class="pb-5"></div>
 
-   
 <?php require_once __DIR__. "/templates/footer.php"; ?>
 </div>      
