@@ -8,3 +8,6 @@
 # node modules folder
 >>>>>>> dev
 node_modules
+
+#database
+pdo.php

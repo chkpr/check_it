@@ -1,4 +1,4 @@
-<div class="min-vh-100">
+<div>
 
 <?php 
 
@@ -61,12 +61,14 @@
         }
     }
 
-if (isset($_GET['action']) && isset($_GET['item_id'])) {
-    if ($_GET['action'] === 'deleteListItem') {
-        $res = deleteListItemById($pdo, (int)$_GET['item_id']);
-        header('Location: ajout-modification-liste.php?id=' . $_GET['id']);
-    }
+    //effacer une liste
+    if (isset($_GET['action']) && isset($_GET['item_id'])) {
+        if ($_GET['action'] === 'deleteListItem') {
+            $res = deleteListItemById($pdo, (int)$_GET['item_id']);
+            header('Location: ajout-modification-liste.php?id=' . $_GET['id']);
+        }
 
+    //Modifier le statut ('to do' / 'done')
     if ($_GET['action'] === 'updateStatusListItem') {
         $res = updateListItemStatus($pdo, (int)$_GET['item_id'], (bool)$_GET['status']);
             if (isset($_GET['redirect']) && $_GET['redirect'] === 'list') {
@@ -74,20 +76,21 @@ if (isset($_GET['action']) && isset($_GET['item_id'])) {
             } else {
                 header('Location: ajout-modification-liste.php?id=' . $_GET['id']);
             }
+        }
     }
-}
 
-$editMode=false;
-if(isset($_GET['id'])) {
-    $list = getListById($pdo, (int)$_GET['id']);
-    $editMode=true;
+    //récupérer les listes
+    $editMode=false;
+    if(isset($_GET['id'])) {
+        $list = getListById($pdo, (int)$_GET['id']);
+        $editMode=true;
 
-    $items = getListItems($pdo, (int)$_GET['id']);
-}
-
-?>
+        $items = getListItems($pdo, (int)$_GET['id']);
+    }
+    ?>
 
 <div class="container col-xxl-8 py-5 my-5 h-75">
+
     <h1>Liste</h1>
 
     <?php foreach ($errorsList as $error) { ?>
@@ -101,7 +104,6 @@ if(isset($_GET['id'])) {
         </div>
     <?php } ?>
     
-
 
     <div class="accordion" id="accordionExample">
     <div class="accordion-item">
@@ -185,10 +187,7 @@ if(isset($_GET['id'])) {
         </div>
     <?php } ?>
 </div>
-
 </div>
-
-
 
 <?php require_once __DIR__. "/templates/footer.php" ?>
 </div>
