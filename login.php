@@ -18,7 +18,6 @@
             //afficher une erreur
             $errors[] = "E-mail ou mot de passe incorrect";
         }
-        var_dump($_SESSION);
     }
 
 ?>
