@@ -2,9 +2,12 @@
 try
 {
     $pdo = new PDO("mysql:dbname=$datablase;host=$hostname;charset=utf8mb4", $username, $password);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
 }
-catch (Exception $e)
+catch (PDOException $e)
 {
-        die('Erreur : ' . $e->getMessage());
+        echo "Connection failed: " . $e->getMessage();
 }
 ?>
