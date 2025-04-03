@@ -1,7 +1,7 @@
 <?php
 try
 {
-    $pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "masterofall", "SayMyName@SayMyName");
+    $pdo = new PDO("mysql:dbname=$datablase;host=$hostname;charset=utf8mb4", $username, $password);
 }
 catch (Exception $e)
 {
