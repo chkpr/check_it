@@ -79,8 +79,8 @@
     <div class="px-3 mx-3 pt-3 pb-5">
         <h3 class="pb-5">Pour consulter vos listes, vous devez vous connecter.</h3>
         <a href="login.php" class="btn btn-outline-primary me-2">Connexion</a>
-        <?php } ?>
     </div>
+    <?php } ?>
 </div>
 
 <div class="pb-5"></div>
