@@ -1,4 +1,4 @@
-<div>
+
 
 <?php
     
@@ -14,6 +14,8 @@
             $categoryId = (int)$_GET['category'];
         }
         $lists = getListsByUserId($pdo, $_SESSION['user']['id'], $categoryId);
+
+        
     }
 
     $categories = getCategories($pdo);
@@ -22,10 +24,10 @@
 
 <div class="container pb-5 mb-5 px-5">
     <div class="d-flex justify-content-between align-items-center py-5 mt-5">
-        <h1 class="">Mes listes</h1>
+        <h1>Mes listes</h1>
         <?php if (isUserConnected()) { ?>
             <a href="ajout-modification-liste.php" class="btn btn-primary">Ajouter une liste</a>
-        
+         <?php } ?>
         <form method="get">
             <label for="category" class="form-label">Catégories</label>
             <select name="category" id="category" onchange="this.form.submit()">
@@ -36,7 +38,7 @@
                 <?php } ?>
             </select>    
         </form>
-        <?php } ?>
+        
     </div>
     <div class="row py-5 my-5 container_bg">
 
@@ -79,11 +81,10 @@
     <div class="px-3 mx-3 pt-3 pb-5">
         <h3 class="pb-5">Pour consulter vos listes, vous devez vous connecter.</h3>
         <a href="login.php" class="btn btn-outline-primary me-2">Connexion</a>
-    </div>
+    
     <?php } ?>
 </div>
 
-<div class="pb-5"></div>
 
+</div>
 <?php require_once __DIR__. "/templates/footer.php"; ?>
-</div>      
