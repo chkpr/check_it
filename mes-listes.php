@@ -15,10 +15,10 @@
         }
         $lists = getListsByUserId($pdo, $_SESSION['user']['id'], $categoryId);
 
-        
+        $categories = getCategories($pdo);
     }
 
-    $categories = getCategories($pdo);
+    
 
 ?>
 
