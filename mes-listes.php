@@ -8,8 +8,11 @@
     require_once "lib/category.php";
     
     
-    $categoryId = null;
+    
     if(isset($_SESSION['user'])) {
+
+        $categoryId = null;
+
         if (isset($_GET['category'])) {
             $categoryId = (int)$_GET['category'];
         }
