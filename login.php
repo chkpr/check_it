@@ -17,7 +17,7 @@
         } else {
             //afficher une erreur
             $errors[] = "E-mail ou mot de passe incorrect";
-            header('location: login.php');
+            
         }
     }
 
