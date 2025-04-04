@@ -1,6 +1,6 @@
 <?php
 
-function getListsByUserId(PDO $pdo, int $userId, int $categoryId=null):array
+function getListsByUserId(PDO $pdo, int $userId, ?int $categoryId=null):array
 {
     $sql = "SELECT list.*, category.name as category_name, 
     category.icon as category_icon FROM list
@@ -33,7 +33,7 @@ function getListById(PDO $pdo, int $id):array|bool
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-function saveList(PDO $pdo, string $title, int $userId, int $categoryId, int $id=null):int|bool
+function saveList(PDO $pdo, string $title, int $userId, int $categoryId, ?int $id=null):int|bool
 {
     if ($id) {
         //UPDATE
@@ -62,7 +62,7 @@ function saveList(PDO $pdo, string $title, int $userId, int $categoryId, int $id
     }
 }
 
-function saveListItem(PDO $pdo, string $name, int $listId, bool $status = false, int $id=null):bool
+function saveListItem(PDO $pdo, string $name, int $listId, bool $status = false, ?int $id=null):bool
 {
     if ($id) {
         //UPDATE
