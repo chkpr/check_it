@@ -46,9 +46,11 @@ die('Error: ' . $e->getMessage());
 
 ### Step 4: Test the project
 
-This project is intended to learn and is not meant to be put in production. However, its features can be tried in a local environment with a test user:
-login: user@user.com
-password: password
+This project is intended to learn and is not meant to be used in production. However, its features can be tried in a local environment with a test user:
+
+###### login: user@user.com
+
+###### password: password
 
 #### To create a new user :
 
@@ -61,7 +63,7 @@ mysql -u username -password
 ##### 2. Insert user in database:
 
 ```
-INSERT INTO user (nickname, email, password) VALUES ('nomdelutilisateur', 'emaildelutilisateur', 'motdepassedelutilisateur');
+INSERT INTO user (nickname, email, password) VALUES ('username', 'useremail', 'userpassword');
 ```
 
 or use PHPMyAdmin.
@@ -70,7 +72,7 @@ or use PHPMyAdmin.
 
 Use password_hash() to hash the password (https://www.php.net/manual/en/function.password-hash.php)
 
-##### 4. Insert password into the database:
+##### 4. Insert hashed password into database:
 
 ```
 UPDATE check_it
