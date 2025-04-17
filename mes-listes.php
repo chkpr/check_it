@@ -30,7 +30,7 @@
         <h1>Mes listes</h1>
         <?php if (isUserConnected()) { ?>
             <a href="ajout-modification-liste.php" class="btn btn-primary">Ajouter une liste</a>
-         <?php } ?>
+         
         <form method="get">
             <label for="category" class="form-label">Catégories</label>
             <select name="category" id="category" onchange="this.form.submit()">
@@ -41,7 +41,7 @@
                 <?php } ?>
             </select>    
         </form>
-        
+        <?php } ?>
     </div>
     <div class="row py-5 my-5 container_bg">
 

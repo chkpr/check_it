@@ -1,6 +1,6 @@
 <?php
 
-$url = getenv('JAWSDB_MARIA_URL');
+/*$url = getenv('JAWSDB_MARIA_URL');
 $dbparts = parse_url($url);
 
 $hostname = $dbparts['host'];
@@ -19,5 +19,16 @@ try
 catch (PDOException $e)
 {
         echo "Connection failed: " . $e->getMessage();
+}
+?>*/
+
+
+try
+{
+    $pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "###", "###");
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
 }
 ?>
