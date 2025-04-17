@@ -12,7 +12,7 @@ node_modules
 #database
 backup.sql
 check_it.sql
-pdo.php
+
 
 
 
