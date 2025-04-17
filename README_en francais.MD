@@ -1,7 +1,9 @@
+##### Cette documentation est en cours de rédaction.
+
 # CheckIt : application de To Do List
 
 CheckIt est un gestionnaire de listes de choses à faire qui permet de créer, modifier et supprimer des listes, d'en marquer les items comme faits ou restant à faire et d'organiser et filtrer les listes par catégorie.
-Ce projet a été réalisé dans le cadre de la formation Graduate Développeur fullstack chez Studi en 2024/2025
+Ce projet a été réalisé dans le cadre de la formation Graduate Développeur fullstack chez Studi (https://www.studi.com/fr/formation/developpement-web/graduate-developpeur-web-full-stack)
 
 ## Technologies
 

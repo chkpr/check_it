@@ -87,5 +87,3 @@ As already mentioned, this project was created for training purpose only (for th
 
 - Add categories to classify lists
 - User account creation
-
-Thanks for reading ^^
