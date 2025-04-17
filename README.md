@@ -1,7 +1,7 @@
-# CheckIt : application de To Do List
+# CheckIt: To Do List application
 
-CheckIt est un gestionnaire de listes de choses à faire qui permet de créer, modifier et supprimer des listes, d'en marquer les items comme faits ou restant à faire et d'organiser et filtrer les listes par catégorie.
-Ce projet a été réalisé dans le cadre de la formation Graduate Développeur fullstack chez Studi en 2024/2025
+CheckIt is a to-do list manager that features lists creation and edition, marking items as done or still to do, and filtering lists by category.
+This project was carried out as part of Studi's Graduate Developer fullstack learning program (https://www.studi.com/fr/formation/developpement-web/graduate-developpeur-web-full-stack).
 
 ## Technologies
 
@@ -11,59 +11,81 @@ Ce projet a été réalisé dans le cadre de la formation Graduate Développeur 
 - Xampp
 - VSCode
 
-## Déploiement local
+## Local deployment
 
-### Etape 1 : importer la base de données
+### Step 1: Import the database
 
-Une fois le repository cloné et après avoir démarré Xampp et PHP, importer la base de données du projet, soit via l'interface de PHPMyadmin, soit depuis le terminal :
+After cloning the repository and starting Xampp and PHP, import the project database, either using PHPMyadmin or from the terminal:
 
-mysql -u nomdutilisateur -pmotdepasse check_it < check_it.sql
+```
+mysql -u username -password check_it < check_it.sql
+```
 
-en cas d'erreur 'the < operator is reserved for future use' sous Windows :
-Get-Content check_it.sql | mysql -u nomdutilisateur -pmotdepasse check_it
+in case it generates an error ("the < operator is reserved for future use") on Windows please try this:
 
-### Etape 3 : Connecter la base de données au projet
+```
+Get-Content check_it.sql | mysql -u username -password check_it
+```
 
-Créer un fichier pdo.php dans le dossier assets/lib avec le code suivant, en remplaçant "root" par le nom d'utilisateur du gestionnaire de base de données et " " par son mot de passe :
+### Step 3: Connect the database to the project
+
+Create a pdo.php file in the assets/lib folder with the following code. Remember to replace “root” with the database manager username and “ ” with the password:
 
 ```
 <?php
 try
 {
-$pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "root", "");
+$pdo = new PDO(“mysql:dbname=check_it;host=localhost;charset=utf8mb4”, “root”, “ ”);
 }
 catch (Exception $e)
 {
-die('Erreur : ' . $e->getMessage());
+die('Error: ' . $e->getMessage());
 }
 ?>
 ```
 
-### Etape 4 : Tester le projet
+### Step 4: Test the project
 
-Ce projet est un projet de formation qui n'a pas vocation à être utilisé dans un autre cadre. Il est tout de même possible de tester son fonctionnement en créant un nouvel utilisateur ou en utilisant les identifiants de l'utilisateur test proposés pour se connecter :
-login : user@user.com
-mot de passe : password
+This project is intended to learn and is not meant to be put in production. However, its features can be tried in a local environment with a test user:
+login: user@user.com
+password: password
 
-#### Pour créer un nouvel utilisateur :
+#### To create a new user :
 
-##### 1. Connexion à la base de données:
+##### 1. Connect to the database:
 
-mysql -u nomdutilisateur -pmotdepasse
+```
+mysql -u username -password
+```
 
-##### 2. Insertion de l'utilisateur en bdd :
+##### 2. Insert user in database:
 
+```
 INSERT INTO user (nickname, email, password) VALUES ('nomdelutilisateur', 'emaildelutilisateur', 'motdepassedelutilisateur');
-ou
-Utiliser PHPMyAdmin
+```
 
-##### 3. Hashage du mot de passe :
+or use PHPMyAdmin.
 
-Utiliser password_hash() pour hasher le mot de passe
+##### 3. Password hashing :
 
-##### 4. Insertion du mot de passe en base de données :
+Use password_hash() to hash the password (https://www.php.net/manual/en/function.password-hash.php)
 
+##### 4. Insert password into the database:
+
+```
 UPDATE check_it
-SET password = 'hashdumotdepasse"
+SET password = 'hashdumotdepasse”
+```
 
-(ou utiliser PHPMyAdmin)
+(or use PHPMyAdmin)
+
+## Online
+
+As already mentioned, this project was created for training purpose only (for the same purpose, it was also made available online at this address: https://glacial-temple-51496-87c24c489cfb.herokuapp.com/)
+
+## Features currently being added
+
+- Add categories to classify lists
+- User account creation
+
+Thanks for reading ^^
