@@ -26,16 +26,18 @@ Get-Content check_it.sql | mysql -u nomdutilisateur -pmotdepasse check_it
 
 Créer un fichier pdo.php dans le dossier assets/lib avec le code suivant, en remplaçant "root" par le nom d'utilisateur du gestionnaire de base de données et " " par son mot de passe :
 
+```
 <?php
 try
 {
-    $pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "root", "");
+$pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "root", "");
 }
 catch (Exception $e)
 {
-        die('Erreur : ' . $e->getMessage());
+die('Erreur : ' . $e->getMessage());
 }
 ?>
+```
 
 ### Etape 4 : Tester le projet
 
@@ -52,6 +54,8 @@ mysql -u nomdutilisateur -pmotdepasse
 ##### 2. Insertion de l'utilisateur en bdd :
 
 INSERT INTO user (nickname, email, password) VALUES ('nomdelutilisateur', 'emaildelutilisateur', 'motdepassedelutilisateur');
+ou
+Utiliser PHPMyAdmin
 
 ##### 3. Hashage du mot de passe :
 
@@ -61,3 +65,5 @@ Utiliser password_hash() pour hasher le mot de passe
 
 UPDATE check_it
 SET password = 'hashdumotdepasse"
+
+(ou utiliser PHPMyAdmin)
