@@ -85,5 +85,5 @@ As already mentioned, this project was created for training purpose only (for th
 
 ## Features currently being added
 
-- Add categories to classify lists
+- Add categories to lists
 - User account creation
