@@ -12,9 +12,7 @@ node_modules
 #database
 backup.sql
 check_it.sql
-assets/lib/pdo.php
 pdo.php
 
-#session
-assets/lib/session.php
-session.php
+
+
