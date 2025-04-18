@@ -37,7 +37,7 @@ Create a pdo.php file in the assets/lib folder with the following code. Remember
 <?php
 try
 {
-$pdo = new PDO(“mysql:dbname=check_it;host=localhost;charset=utf8mb4”, “root”, “ ”);
+$pdo = new PDO("mysql:dbname=check_it;host=localhost;charset=utf8mb4", "root", " ");
 }
 catch (Exception $e)
 {
