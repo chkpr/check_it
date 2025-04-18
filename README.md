@@ -20,13 +20,13 @@ This project was carried out as part of Studi's Graduate Developer fullstack lea
 After cloning the repository and starting Xampp and PHP, import the project database, either using PHPMyAdmin or from the terminal:
 
 ```
-mysql -u username -password check_it < check_it.sql
+mysql -u username -ppassword check_it < check_it.sql
 ```
 
 In case it generates an error ("the < operator is reserved for future use") on Windows please try this:
 
 ```
-Get-Content check_it.sql | mysql -u username -password check_it
+Get-Content check_it.sql | mysql -u username -ppassword check_it
 ```
 
 ### Step 2: Connect the database to the project
@@ -59,7 +59,7 @@ This project is intended to learn and is not meant to be used in production. How
 ##### 1. Connect to the database:
 
 ```
-mysql -u username -password
+mysql -u username -ppassword
 ```
 
 ##### 2. Insert the new user into database:
