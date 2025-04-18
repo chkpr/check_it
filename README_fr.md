@@ -80,7 +80,7 @@ Utiliser password_hash() pour hasher le mot de passe (https://www.php.net/manual
 
 ```
 <?php
-echo password_hash("userpassword", PASSWORD_DEFAULT);
+echo password_hash("motdepassedelutilisateur", PASSWORD_DEFAULT);
 ?>
 
 ```
