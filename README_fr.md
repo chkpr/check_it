@@ -100,10 +100,6 @@ SET password = 'hashdumotdepasse"
 
 Il n'est plus nécessaire et ne doit pas être conservé dans le répertoire du projet.
 
-## En ligne
-
-Comme indiqué précédemment, ce projet est un projet réalisé à des fins de formation, il n'est donc pas destiné à être mis en production mais dans un but d'apprentissage, je l'ai déployé sur Heroku via git à l'adresse suivante : https://glacial-temple-51496-87c24c489cfb.herokuapp.com/
-
 ## Fonctionnalités en cours d'ajout
 
 - Ajout de catégories pour classer les listes
