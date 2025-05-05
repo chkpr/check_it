@@ -100,10 +100,6 @@ SET password = 'hashedpassword”
 
 It is no longer needed and shouldn't be kept in the directory.
 
-## Online
-
-As already mentioned, this project was created for training purpose only (for the same purpose, it was also made available online at this address: https://glacial-temple-51496-87c24c489cfb.herokuapp.com/)
-
 ## Features currently being added
 
 - Add categories to lists
